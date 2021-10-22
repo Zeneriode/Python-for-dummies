@@ -27,3 +27,5 @@ print(c + ' ' + str(a))  # '1 1'
 print(c, a, b)  # 1 1 1.0
 # '' or "" - doesn't matter
 # + or , - you don't want ' ' or do
+
+print(1, 2, 3, sep=', ', end='.')
