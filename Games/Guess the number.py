@@ -3,8 +3,8 @@ from time import sleep
 
 MIN_VALUE = 1  # минимальное число, которое можно загадать
 MAX_VALUE = 10  # максимальное число, которое можно загадать
-MIN_SLEEP = 1
-MAX_SLEEP = 3
+MIN_SLEEP = 1  # минимальное время ожидания ответа
+MAX_SLEEP = 3  # максимальное время ожидания ответа
 
 
 def guess() -> None:
@@ -16,10 +16,11 @@ def guess() -> None:
 
     for i in range(MAX_VALUE):  # даём кол-во попыток
         if int(input()) == number:  # сравнимаем написанное число с загаданным
+            sleep(rnd(MIN_SLEEP, MAX_SLEEP))  # замедляем программу, чтобы была интрига
             print("Ты угадал!")
             return
         elif i < 10:  # если ещё есть попытки
-            sleep(rnd(MIN_SLEEP, MAX_SLEEP))
+            sleep(rnd(MIN_SLEEP, MAX_SLEEP))  # замедляем программу, чтобы была интрига
             print("Нет, я загадал другое\nУ тебя осталось", MAX_VALUE - i - 1, "попыток.")
 
     print("Не угадал! Я загадал", number)
@@ -52,6 +53,8 @@ def find() -> None:
 
 
 def game() -> None:
+    """ Меню, где пользователь может выбрать, во что играть или завершить программу """
+
     while True:
         choice = input().lower()  # спрашиваем, что человек хочет выбрать, регистр букв не учитываем
         if choice in ["загадать число", "загадать число.", "загадать число!"]:
