@@ -52,3 +52,11 @@ def factorial(a: int) -> int:  # нахождение факториала
     if a == 1:
         return 1
     return a * factorial(a - 1)
+
+
+def find_bcd(a: int, b: int) -> int:
+    """ Алгоритм Евклида """
+    if min(a, b) == 0:
+        return max(a, b)
+
+    return find_bcd(min(a, b), max(a, b) % min(a, b))
