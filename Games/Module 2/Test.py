@@ -29,4 +29,8 @@ def factorial(b):
     return b * factorial(b)
 
 
-factorial(int(input()))
+def arithmetic_mean (a: int, b: int) -> int:
+    a = int(input())
+    b = int(input())
+    (a + b) / 2
+    return(a, b)

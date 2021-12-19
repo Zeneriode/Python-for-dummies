@@ -15,7 +15,7 @@ def guess() -> None:
     print("Сейчас я загадал число от ", MIN_VALUE, " до ", MAX_VALUE, "\nУгадай, какое?", sep="")
 
     for i in range(MAX_VALUE):  # даём кол-во попыток
-        if int(input()) == number:  # сравнимаем написанное число с загаданным
+        if int(input()) == number:  # сравниваем написанное число с загаданным
             sleep(rnd(MIN_SLEEP, MAX_SLEEP))  # замедляем программу, чтобы была интрига
             print("Ты угадал!")
             return
@@ -42,7 +42,7 @@ def find() -> None:
         number = rnd(0, len(numbers) - 1)  # берём случайное число из списка
 
         print("Это ", numbers[number], "?", sep="")
-        answer = input().lower()  # сохраняем ответ, сразу изменяя регист всем буквам
+        answer = input().lower()  # сохраняем ответ, сразу изменяя регистр всем буквам
         if answer in ["да", "да.", "да!"]:
             print("Ура, я угадал!")
             return
