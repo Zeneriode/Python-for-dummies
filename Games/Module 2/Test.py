@@ -5,7 +5,7 @@ a = []  # 2 способ
 for i in range(1, 11):
     a.append(i)
 
-a = list((i for i in range(1, 11)))  # 3 способ
+a = list(i for i in range(1, 11))  # 3 способ
 
 
 # Task 2: выписать только четные числа из списка, список случайный
