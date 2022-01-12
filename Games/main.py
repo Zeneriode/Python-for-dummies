@@ -1,16 +1,8 @@
-# Угадай число
-# 1 игрок загадывает число, второй отгадывает
-# 1 из игроков - компьютер
-
-# 1 часть игры - загадывает число человек, компьютер отгадывает
-
 from random import randint as rnd
-# python      ->          c      ->        assembly language      ->          machine code
-#        interpretation       compiler     MIPS X86             assembler
-# c#, c++, c - абсолютно разные
 
 
-def guess_number() -> None:
+def human_guess_number() -> None:
+    """Запускает игру, где человек угадывает число от 1 до 10, которое загадал компьютер"""
     number = rnd(1, 10)
     while True:
         answer = int(input())
@@ -21,10 +13,7 @@ def guess_number() -> None:
             print("Попробуй ещё раз.")
 
 
-guess_number()
-
-
-def find_number() -> None:
+def computer_guess_number() -> None:
     numbers = list(range(1, 11))  # список чисел, которые компьютер может угадывать
 
     for i in range(len(numbers)):
@@ -36,3 +25,6 @@ def find_number() -> None:
         else:
             print("Ура")
             break
+
+
+human_guess_number()

@@ -21,7 +21,7 @@ def guess() -> None:
             return
         elif i < 10:  # если ещё есть попытки
             sleep(rnd(MIN_SLEEP, MAX_SLEEP))  # замедляем программу, чтобы была интрига
-            print("Нет, я загадал другое\nУ тебя осталось", MAX_VALUE - i - 1, "попыток.")
+            print("Нет, я загадал другое\nУ тебя осталось {:d} попыток.".format(MAX_VALUE - i - 1))
 
     print("Не угадал! Я загадал", number)
 
@@ -41,9 +41,9 @@ def find() -> None:
 
         number = rnd(0, len(numbers) - 1)  # берём случайное число из списка
 
-        print("Это ", numbers[number], "?", sep="")
+        print("Это {:d}?".format(numbers[number]))
         answer = input().lower()  # сохраняем ответ, сразу изменяя регистр всем буквам
-        if answer in ["да", "да.", "да!"]:
+        if "да" in answer:
             print("Ура, я угадал!")
             return
         else:
@@ -57,11 +57,11 @@ def game() -> None:
 
     while True:
         choice = input().lower()  # спрашиваем, что человек хочет выбрать, регистр букв не учитываем
-        if choice in ["загадать число", "загадать число.", "загадать число!"]:
+        if "загадать число" in choice:
             find()
-        elif choice in ["угадать число", "угадать число.", "угадать число!"]:
+        elif "угадать число" in choice:
             guess()
-        elif choice in ["выход", "выход.", "выход!"]:
+        elif "выход" in choice:
             print("Завершение программы...")
             return  # заканчиваем бесконечный цикл (а с ним и всю программу)
         else:
