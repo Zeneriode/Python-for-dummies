@@ -70,7 +70,7 @@ class Animal:
         self.voice = voice
 
 
-# подкласс, имеющий доп. параметры
+# Подкласс, имеющий доп. параметры
 class Tiger (Animal):
     def attack(self):  # init не нужен, он уже есть у Animal
         pass  # выполняем что-то для этой функции
