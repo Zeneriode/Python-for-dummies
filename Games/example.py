@@ -1,26 +1,37 @@
-from pygame import event, init, QUIT
-from snake_settings import *
+class Car:
+    def __init__(self, color):
+        self.avg_speed = 100
+        self.audio = "rrrrr"
+        self.color = color
 
-init()  # запускаем файл, окно
+    def increase_speed(self) -> None:
+        print("Скорость автомобиля сейчас:", end=" ")
+        for speed in range(0, self.avg_speed, 10):
+            print(str(speed) + "...", end=" ")
+        print()
 
-land = Land(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)  # Задний фон для игры
+    def say_color(self) -> str:
+        return "Цвет машины: " + self.color
 
-start_x = randint(BLOCK_SIZE * 4, SCREEN_WIDTH - BLOCK_SIZE * 5)
-start_y = randint(0, SCREEN_HEIGHT)
-snake = Snake("green", start_x - start_x % BLOCK_SIZE, start_y - start_y % BLOCK_SIZE, 4)
 
-play = True
-while play:
-    for e in event.get():
-        if e.type == QUIT:
-            play = False
-    land.draw()
-    snake.draw()
+# lamborghini = Car("Yellow")
+# lamborghini.increase_speed()
+# print(lamborghini.say_color())
+# print(lamborghini.color)
 
-    # рисуем границы между блоками в окне
-    for i in range(BLOCK_SIZE, SCREEN_WIDTH, BLOCK_SIZE):
-        draw.line(screen, "black", [i, 0], [i, SCREEN_HEIGHT])
-    for i in range(BLOCK_SIZE, SCREEN_HEIGHT, BLOCK_SIZE):
-        draw.line(screen, "black", [0, i], [SCREEN_WIDTH, i])
+class Lamborghini(Car):
+    def __init__(self, color, display):
+        super().__init__(color)
+        self.display = display
+        self.avg_speed = 300
 
-    display.update()
+    def increase_speed(self) -> None:
+        print("Скорость автомобиля сейчас:", end=" ")
+        for speed in range(0, self.avg_speed, 50):
+            print(str(speed) + "...", end=" ")
+        print("Автомобиль приехал в пункт назначения.")
+
+
+lambo = Lamborghini("Green", "Ipad 5")
+lambo.increase_speed()
+print(lambo.say_color())
