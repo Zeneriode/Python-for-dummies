@@ -26,3 +26,13 @@ print(1 if x1 == x2 or y1 == y2 or abs(x1 - x2) == abs(y1 - y2) else 2)  # фе�
 # Дан год, вывести, високосный он или нет
 year = int(input())
 print("Високосный" if year % 4 == 0 and year % 100 != 0 or year % 400 == 0 else "Невисокосный")
+
+# Дано 2 числа, вывести его НОД
+a = int(input())
+b = int(input())
+while min(a, b) != 0:
+    if a < b:
+        b = b % a
+    else:
+        a = a % b
+print(max(a, b))

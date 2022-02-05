@@ -1,6 +1,5 @@
 import threading
 
-
 X = 0
 
 
