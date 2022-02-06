@@ -1,5 +1,7 @@
-from pygame import event, init, QUIT
+from pygame import init, QUIT, time, event
 from snake_settings import *
+
+fps = time.Clock()
 
 init()  # запускаем файл, окно
 
@@ -14,6 +16,9 @@ while play:
     for e in event.get():
         if e.type == QUIT:
             play = False
+    snake.change_direction()
+    snake.move()
+
     land.draw()
     snake.draw()
 
@@ -24,3 +29,4 @@ while play:
         draw.line(screen, "black", [0, i], [SCREEN_WIDTH, i])
 
     display.update()
+    fps.tick(5)
