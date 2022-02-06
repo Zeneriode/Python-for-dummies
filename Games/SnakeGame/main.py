@@ -1,4 +1,4 @@
-from pygame import init, QUIT, time, event
+from pygame import init, time, event
 from snake_settings import *
 
 fps = time.Clock()
@@ -13,11 +13,10 @@ snake = Snake("green", start_x - start_x % BLOCK_SIZE, start_y - start_y % BLOCK
 
 play = True
 while play:
-    for e in event.get():
-        if e.type == QUIT:
-            play = False
     snake.change_direction()
     snake.move()
+
+    play = snake.check_collisions()
 
     land.draw()
     snake.draw()
@@ -28,5 +27,9 @@ while play:
     for i in range(BLOCK_SIZE, SCREEN_HEIGHT, BLOCK_SIZE):
         draw.line(screen, "black", [0, i], [SCREEN_WIDTH, i])
 
+    for e in event.get():  # проверим, что мы хотим выйти из игры
+        if key.get_pressed()[pygame.K_ESCAPE] or e.type == pygame.QUIT:
+            play = False
+
     display.update()
-    fps.tick(5)
+    fps.tick(8)

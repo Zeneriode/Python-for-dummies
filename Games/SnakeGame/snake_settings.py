@@ -56,9 +56,25 @@ class Snake:
             case 'u': self.y[0] -= BLOCK_SIZE
             case 'd': self.y[0] += BLOCK_SIZE
 
-    def check_collisions(self):
+    def check_collisions(self) -> bool:
         """Проверяем, что змейка не врезалась в себя и не вышла за границы"""
-        pass
+
+        # проверка пересечения змейки самой себя
+        for i in range(1, len(self.x)):
+            if self.x[0] == self.x[i] and self.y[0] == self.y[i]:
+                return False  # если пересекаем сами себя, то останавливаем игру
+
+        # пересекаем границу экрана
+        if self.x[0] >= SCREEN_WIDTH:  # справа
+            self.x[0] = 0
+        if self.x[0] < 0:  # слева
+            self.x[0] = SCREEN_WIDTH
+        if self.y[0] >= SCREEN_HEIGHT:  # снизу
+            self.y[0] = 0
+        if self.y[0] < 0:  # сверху
+            self.y[0] = SCREEN_HEIGHT
+
+        return True  # если не пересекаем сами себя, то продолжаем игру
 
     def grow(self):
         """Змейка растет от поедания еды"""
