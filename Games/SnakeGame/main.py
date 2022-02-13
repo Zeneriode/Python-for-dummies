@@ -7,29 +7,44 @@ init()  # запускаем файл, окно
 
 land = Land(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)  # Задний фон для игры
 
-start_x = randint(BLOCK_SIZE * 4, SCREEN_WIDTH - BLOCK_SIZE * 5)
-start_y = randint(0, SCREEN_HEIGHT)
-snake = Snake("green", start_x - start_x % BLOCK_SIZE, start_y - start_y % BLOCK_SIZE, 4)
 
-play = True
-while play:
-    snake.change_direction()
-    snake.move()
+def start() -> None:
+    """Создаем объекты и случайные координаты для змеи"""
+    start_x = randint(BLOCK_SIZE * 4, SCREEN_WIDTH - BLOCK_SIZE * 5)
+    start_y = randint(0, SCREEN_HEIGHT)
+    start_snake = Snake("green", start_x - start_x % BLOCK_SIZE, start_y - start_y % BLOCK_SIZE, 4)
+    start_food = Food()
+    game(start_snake, start_food)
 
-    play = snake.check_collisions()
 
-    land.draw()
-    snake.draw()
+def game(game_snake: Snake, game_food: Food):
+    """Рисуем игру, следим за происходящим в ней, обновляем экран"""
+    global land, fps
+    play = True
+    while play:
+        game_snake.change_direction()
+        game_food = eat(game_snake, game_food)
+        game_snake.move()
 
-    # рисуем границы между блоками в окне
-    for i in range(BLOCK_SIZE, SCREEN_WIDTH, BLOCK_SIZE):
-        draw.line(screen, "black", [i, 0], [i, SCREEN_HEIGHT])
-    for i in range(BLOCK_SIZE, SCREEN_HEIGHT, BLOCK_SIZE):
-        draw.line(screen, "black", [0, i], [SCREEN_WIDTH, i])
+        play = game_snake.check_collisions()
 
-    for e in event.get():  # проверим, что мы хотим выйти из игры
-        if key.get_pressed()[pygame.K_ESCAPE] or e.type == pygame.QUIT:
-            play = False
+        land.draw()
+        game_food.draw()
+        game_snake.draw()
 
-    display.update()
-    fps.tick(8)
+        # рисуем границы между блоками в окне
+        for i in range(BLOCK_SIZE, SCREEN_WIDTH, BLOCK_SIZE):
+            draw.line(screen, "black", [i, 0], [i, SCREEN_HEIGHT])
+        for i in range(BLOCK_SIZE, SCREEN_HEIGHT, BLOCK_SIZE):
+            draw.line(screen, "black", [0, i], [SCREEN_WIDTH, i])
+
+        for e in event.get():  # проверим, что мы хотим выйти из игры
+            if key.get_pressed()[pygame.K_ESCAPE] or e.type == pygame.QUIT:
+                play = False
+
+        display.update()
+        fps.tick(8)
+
+
+if __name__ == "__main__":
+    start()

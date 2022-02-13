@@ -78,7 +78,9 @@ class Snake:
 
     def grow(self):
         """Змейка растет от поедания еды"""
-        pass
+        self.x.append(SCREEN_WIDTH * 2)  # добавляем новое тело змейки за пределы экрана
+        self.y.append(SCREEN_HEIGHT * 2)
+        self.body_parts += 1  # увеличиваем кол-во частей тел на 1
 
     def change_direction(self):
         """Меняем направление головы змейки"""
@@ -92,10 +94,32 @@ class Snake:
             self.direction = 'r'
 
 
+class Food:
+    """Еда, которую будет поедать змейка"""
+    def __init__(self):
+        global BLOCK_SIZE
+        self.x = randint(0, SCREEN_WIDTH) // BLOCK_SIZE * BLOCK_SIZE  # случайные координаты для еды
+        self.y = randint(0, SCREEN_HEIGHT) // BLOCK_SIZE * BLOCK_SIZE
+        self.size = BLOCK_SIZE  # размеры еды
+        self.color = "red"  # цвет еды
+
+    def draw(self):
+        """Рисуем еду на экране"""
+        global screen
+        draw.rect(screen, self.color, Rect(self.x, self.y, self.size, self.size))
+
+
+def eat(snake_: Snake, food_: Food) -> Food:
+    """Едим еду, змейка растет, появляется новая еда"""
+    if snake_.x[0] == food_.x and snake_.y[0] == food_.y:  # если координаты еды и змейки совпали
+        snake_.grow()  # растим змейку
+        food_ = Food()  # создаем новую еду (по факту просто координаты блока еды)
+
+    return food_  # если еда съедена, возвращаем новый объект, если нет - вернем старые
+
+
 if __name__ == "__main__":
-    snake = Snake("white", 1, 1, 4)
+    food = Food()
+    snake = Snake("white", food.x, food.y, 4)
     while True:
-        # for k in key.get_pressed():
-        #     if k:
-        # print(snake.direction)
-        snake.change_direction()
+        eat(snake, food)
