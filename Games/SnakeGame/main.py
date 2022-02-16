@@ -32,12 +32,6 @@ def game(game_snake: Snake, game_food: Food):
         game_food.draw()
         game_snake.draw()
 
-        # рисуем границы между блоками в окне
-        for i in range(BLOCK_SIZE, SCREEN_WIDTH, BLOCK_SIZE):
-            draw.line(screen, "black", [i, 0], [i, SCREEN_HEIGHT])
-        for i in range(BLOCK_SIZE, SCREEN_HEIGHT, BLOCK_SIZE):
-            draw.line(screen, "black", [0, i], [SCREEN_WIDTH, i])
-
         for e in event.get():  # проверим, что мы хотим выйти из игры
             if key.get_pressed()[pygame.K_ESCAPE] or e.type == pygame.QUIT:
                 play = False
