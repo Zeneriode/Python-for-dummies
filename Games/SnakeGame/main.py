@@ -2,7 +2,6 @@ from pygame import init, time, event
 from snake_settings import *
 
 fps = time.Clock()
-
 init()  # запускаем файл, окно
 
 land = Land(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)  # Задний фон для игры
