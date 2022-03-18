@@ -14,6 +14,7 @@ screen = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))  # окно
 
 class Land(Rect):
     """Задний фон игры"""
+
     def __init__(self, *args):
         super().__init__(*args)
         self.background = "#FFFFFF"  # задний фон окна
@@ -27,13 +28,15 @@ class Land(Rect):
 class Snake:
     global screen
     """Змейка"""
+
     def __init__(self, color: Union[str, Color], start_x: int, start_y: int, body_parts: int):
         self.size = BLOCK_SIZE  # размеры змейки
         self.color = color  # цвет змейки
         self.direction = 'r'  # направление движения головы змеи
         self.body_parts = body_parts  # кол-во блоков (включая голову)
-        self.x = list((start_x - i) for i in range(0, body_parts * BLOCK_SIZE, BLOCK_SIZE))  # координаты по x всех блоков
-        self.y = list(start_y for i in range(0, body_parts * BLOCK_SIZE, BLOCK_SIZE))  # координаты по y всех блоков
+        self.x = list(
+            (start_x - i) for i in range(0, body_parts * BLOCK_SIZE, BLOCK_SIZE))  # координаты по x всех блоков
+        self.y = list(start_y for _ in range(0, body_parts * BLOCK_SIZE, BLOCK_SIZE))  # координаты по y всех блоков
 
     def draw(self):
         """Рисует все блоки для змейки"""
@@ -51,10 +54,14 @@ class Snake:
 
         # двигаем голову в соответствии с направлением движения
         match self.direction:
-            case 'r': self.x[0] += BLOCK_SIZE
-            case 'l': self.x[0] -= BLOCK_SIZE
-            case 'u': self.y[0] -= BLOCK_SIZE
-            case 'd': self.y[0] += BLOCK_SIZE
+            case 'r':
+                self.x[0] += BLOCK_SIZE
+            case 'l':
+                self.x[0] -= BLOCK_SIZE
+            case 'u':
+                self.y[0] -= BLOCK_SIZE
+            case 'd':
+                self.y[0] += BLOCK_SIZE
 
     def check_collisions(self) -> bool:
         """Проверяем, что змейка не врезалась в себя и не вышла за границы"""
@@ -96,6 +103,7 @@ class Snake:
 
 class Food:
     """Еда, которую будет поедать змейка"""
+
     def __init__(self):
         global BLOCK_SIZE
         self.x = randint(0, SCREEN_WIDTH) // BLOCK_SIZE * BLOCK_SIZE  # случайные координаты для еды
