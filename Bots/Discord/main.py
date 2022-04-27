@@ -36,7 +36,7 @@ class MyClient(discord.Client):
             await message.channel.send("Hello back")
 
     # В чатах можно запускать постоянные действия, например: сообщение каждые 10 секунд
-    @tasks.loop(seconds=10)  # эта функция будет запускаться каждые 10 секунд
+    @tasks.loop(seconds=60)  # эта функция будет запускаться каждые 10 секунд
     async def my_background_task(self):
         """Отправляет сообщение "New message" в один чат"""
         # Чтобы отправить сообщения в конкретный чат, надо отметить номер этого чата
@@ -48,6 +48,14 @@ class MyClient(discord.Client):
     async def before_my_task(self):
         """Предотвращает запуск монотонных функций до входа в аккаунт ботом"""
         await self.wait_until_ready()  # Сначала ждем, пока бот войдет в аккаунт, потом запускаем постоянное действие
+
+    # Чтобы выполнить какое-либо действие, когда появился новый пользователь, нужно использовать эту функцию
+    @staticmethod
+    async def on_member_join(member: discord.Member):
+        guild = member.guild
+        if guild.system_channel is not None:
+            to_send = f"Welcome {member.mention} to {guild.name}!"
+            await guild.system_channel.send(to_send)
 
 
 if __name__ == "__main__":  # Запускаем нашего бота с помощью команды run()

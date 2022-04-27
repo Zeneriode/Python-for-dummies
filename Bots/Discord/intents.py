@@ -10,4 +10,6 @@ import discord
 # Это значит, что есть несколько конструкторов. Их 3: all(), default() и none()
 
 intents = discord.Intents.default()  # подключает все интенты, кроме presences и members
-intents.typing = False
+
+# Есть 2 привилегированных интента - members и presences, доступ к которым нужно выдавать через веб. настройки бота
+intents.members = True
