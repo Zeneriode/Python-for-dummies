@@ -52,6 +52,7 @@ class MyClient(discord.Client):
     # Чтобы выполнить какое-либо действие, когда появился новый пользователь, нужно использовать эту функцию
     @staticmethod
     async def on_member_join(member: discord.Member):
+        """Приветствует нового пользователя, когда он появляется на сервере"""
         guild = member.guild
         if guild.system_channel is not None:
             to_send = f"Welcome {member.mention} to {guild.name}!"
