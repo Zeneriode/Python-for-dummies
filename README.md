@@ -1,5 +1,10 @@
-# Hello, dear guy!
+## Методичка, разработанная для обучения Питону на курсах Coddy
 
-This is special repository for saving projects I joined or created using Python in Coddy. If you want to add your project we did together, create pull request and write me.
+Методичка для нескольких курсов. Если есть какие-то проекты/идеи, которые хотелось бы добавить - создавай pull request
+и/или пиши мне:)
 
-Also you can check another projects, maybe you will want to copy or learn to do more:)
+Файлы распределены на несколько разделов:
+- Module (1, 2 или 3) - файлы с теорией и задачами для первых трех модулей обучения
+- Advanced - файлы с продвинутыми знаниями по Python (полезно для competitive programming)
+- Bots - файлы по разработке ботов
+- Games - примеры игр, проекты на курсе "Разработка игр на Python"
