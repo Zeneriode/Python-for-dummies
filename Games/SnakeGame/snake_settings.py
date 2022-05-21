@@ -1,6 +1,6 @@
 import pygame
 from typing import Union
-from pygame import display, draw, Rect, key, Color
+from pygame import display, image, transform, draw, Rect, key, Color
 from random import randint
 
 # константы
@@ -42,7 +42,8 @@ class Snake:
         """Рисует все блоки для змейки"""
         global screen
         for body in range(self.body_parts):
-            draw.rect(screen, self.color, (self.x[body], self.y[body], self.size, self.size))
+            head = transform.scale(image.load("body.jpg"), (self.size, self.size))
+            screen.blit(head, (self.x[body], self.y[body]))
 
     def move(self):
         """Двигаем змейку на один блок"""
