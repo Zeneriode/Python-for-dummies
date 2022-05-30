@@ -26,8 +26,8 @@ class Land(Rect):
 
 
 class Snake:
-    global screen
     """Змейка"""
+    global screen
 
     def __init__(self, color: Union[str, Color], start_x: int, start_y: int, body_parts: int):
         self.size = BLOCK_SIZE  # размеры змейки
