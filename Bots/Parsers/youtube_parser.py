@@ -30,7 +30,7 @@ class ParserYoutube:
         :return объект класса, который парсит страницу с запросом
         """
         self = cls.__new__(cls)
-        self._link = "https://www.youtube.com/" + urlencode({"search_query": request})
+        self._link = "https://www.youtube.com/results?" + urlencode({"search_query": request})
         return self
 
     def parse(self, n: int) -> list[str]:
@@ -68,7 +68,7 @@ class ParserYoutube:
         # Находим видео и сохраняем их в список
         for video in contents:
             video = video.find_next('a', {"id": "thumbnail"})
-            links.append(f"{self._link[:-1]}{video.attrs['href']}")
+            links.append(f"https://www.youtube.com{video.attrs['href']}")
             if len(links) == n:
                 break
 
@@ -82,10 +82,33 @@ class ParserYoutube:
 
         :return список ссылок на видео по ссылке
         """
-        pass
+        links: list[str] = []  # список видео
+
+        # Используя Chrome браузер, открываем страницу Youtube
+        browser = webdriver.Chrome()
+        browser.get(self._link)
+        html = browser.page_source
+        sleep(3)
+        browser.quit()
+
+        # Парсинг html кода
+        soup = BS(html, "html.parser")
+        contents = soup.find_all("ytd-thumbnail", {"class": "style-scope ytd-video-renderer"})
+
+        # Находим видео и сохраняем их в список
+        for video in contents:
+            video = video.find_next('a', {"id": "thumbnail"})
+            links.append(f"https://www.youtube.com{video.attrs['href']}")
+            if len(links) == n:
+                break
+
+        return links
 
 
 # Пример работы - вывод 5 ссылок с главной страницы и 5 ссылок по запросу "Майнкрафт"
 if __name__ == "__main__":
     parserYt = ParserYoutube()
-    print(*parserYt.parse(5), sep="\n")  # 5 случайных популярных видео с главной страницы Youtube
+    print(*parserYt.parse(5), sep='\n')  # 5 случайных популярных видео с главной страницы Youtube
+
+    parserLinkYt = ParserYoutube().one_request("Майнкрафт")
+    print(*parserLinkYt.parse(5), sep='\n')  # 5 видео с Youtube по запросу
