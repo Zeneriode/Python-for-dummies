@@ -88,9 +88,9 @@ class MyWindow(Window):
         """Активируется, если пользователь отжал какую-либо кнопку"""
         pass
 
-    def on_mouse_drag(self, x: int, y: int,
-                      dx: int, dy: int,
-                      buttons: int, modifiers: int):
+    def on_mouse_drag(
+        self, x: int, y: int, dx: int, dy: int, buttons: int, modifiers: int
+    ):
         """Метод для добавления функционала для мыши"""
         pass
 
