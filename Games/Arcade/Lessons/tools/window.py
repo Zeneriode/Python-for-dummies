@@ -6,7 +6,7 @@
 Для создания собственного окна нужно создать класс, который будет наследовать свойства класса Window
 """
 
-from arcade import run, Window
+from arcade import Window, run
 
 
 class MyWindow(Window):
@@ -17,16 +17,36 @@ class MyWindow(Window):
 
         # Параметры окна, которые можно изменить
         # Все эти параметры желательно инициализировать при запуске конструктора класса Window (стр. 16)
-        self.width = 800  # Ширина окна
-        self.height = 600  # Высота экрана
-        self.title = "Test"  # Название окна
-        self.set_fullscreen(False)  # Делать окно полноэкранным или нет
-        self.resizeable = False  # Разрешить менять размеры окна или нет
-        self.update_rate = 1 / 60  # 1 / fps или как часто обновлять кадр
-        self.visible = True  # показывать окно сразу при запуске или нет
-        self.vsync = False  # стараться синхронизировать изображения или нет
-        self.center_window = True  # Показать окно в центре экрана
-        self.enable_polling = True  # Можно ли использовать мышь / клавиатуру / другое для окна
+
+        # Ширина окна
+        self.width = 800
+
+        # Высота экрана
+        self.height = 600
+
+        # Название окна
+        self.title = "Test"
+
+        # Делать окно полноэкранным или нет
+        self.set_fullscreen(False)
+
+        # Разрешить менять размеры окна или нет
+        self.resizeable = False
+
+        # 1 / fps или как часто обновлять кадр
+        self.update_rate = 1 / 60
+
+        # показывать окно сразу при запуске или нет
+        self.visible = True
+
+        # стараться синхронизировать изображения или нет
+        self.vsync = False
+
+        # Показать окно в центре экрана
+        self.center_window = True
+
+        # Можно ли использовать мышь / клавиатуру / другое для окна
+        self.enable_polling = True
 
     def setup(self):
         """Метод, где обычно загружаются и создаются все предметы для конкретного уровня или режима"""
@@ -68,7 +88,9 @@ class MyWindow(Window):
         """Активируется, если пользователь отжал какую-либо кнопку"""
         pass
 
-    def on_mouse_drag(self, x: int, y: int, dx: int, dy: int, buttons: int, modifiers: int):
+    def on_mouse_drag(self, x: int, y: int,
+                      dx: int, dy: int,
+                      buttons: int, modifiers: int):
         """Метод для добавления функционала для мыши"""
         pass
 
