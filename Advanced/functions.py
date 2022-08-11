@@ -34,17 +34,17 @@ def new_value(value: int) -> None:
 
 
 # You can create some arguments and some of them can be initialized by default
-def new_value(value1: int, value2: int, choose: int = 0):
+def print_value(value1: int, value2: int, choose: int = 0):
     if choose == 0:
         print(value1)
     else:
         print(value2)
 
 
-new_value(1, 2)  # 'choose' variable is 0 by default
+print_value(1, 2)  # 'choose' variable is 0 by default
 
 # You can initialize the arguments by printing their names in the brackets
-new_value(value2=5, value1=1, choose=1)
+print_value(value2=5, value1=1, choose=1)
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -61,9 +61,9 @@ def print_all(*values: object) -> None:
 print_all(1, 2, 3, 4)
 
 
-def print_some(**values: [str, object]) -> None:
-    if 'a' in values:
-        print(values['a'])
+def print_some(**values) -> None:
+    if "a" in values:
+        print(values["a"])
 
 
 # prints 1 value with key '1' if it's in the dictionary
