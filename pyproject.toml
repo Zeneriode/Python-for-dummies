@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "Python for dummies"
+version = "0.1.0"
+description = "This is an interpreter for running some scripts from this repository"
+authors = ["Zener_085 <zener.085@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pygame = "^2.1.2"
+discord = "^2.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

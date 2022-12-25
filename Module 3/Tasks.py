@@ -23,9 +23,9 @@ def factorial(n: int) -> int:
 
 
 # TODO найти НОД 2-х чисел, используя рекурсию
-def find_bcd(b: int, c: int) -> int:
+def find_gcd(b: int, c: int) -> int:
     """Алгоритм Евклида - поиск НОД числа"""
     if min(b, c) == 0:
         return max(b, c)
 
-    return find_bcd(min(b, c), max(b, c) % min(b, c))
+    return find_gcd(min(b, c), max(b, c) % min(b, c))
