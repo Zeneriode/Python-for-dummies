@@ -5,7 +5,7 @@
 - [How are other types converted to bool type?](#how-are-other-types-converted-to-bool-type)
 - [How to compare values?](#how-to-compare-values)
 ---
-### What is boolean algebra?
+## What is boolean algebra?
 Computers can work only with ones and zeros. Thus, all information is stored as sequences of ones and zeros in some
 cases. Because computers also cannot understand arithmetic actions, we must work only with boolean algebra.
 
@@ -14,7 +14,7 @@ Boolean algebra has its own set of logical operations, such as `and`, `or`, and 
 evaluate boolean expressions. These logical operations can be applied to boolean values to create more complex
 expressions, which can be used to test conditions in computer programs or digital circuits.
 ---
-### How to work with logical values?
+## How to work with logical values?
 To start to do something, we firstly need to have some boolean values in the program, i.e. some variables `bool` type.
 In example, let's find if we all variables contain `True` value:
 ```python
@@ -26,7 +26,7 @@ print(var1 and var2 and var3)
 By using `and` statements we can combine all values to get 1. I will consider you know how `and`, `or` and `not`
 operations work from school/self-study.
 ---
-### How are other types converted to bool type?
+## How are other types converted to bool type?
 This is important to understand because some code in the future will rely on that, not only on education.
 There are some cases, when `bool()` function can return us `False` value:
 1) If `int`/`float` value equals `0`.
@@ -38,7 +38,7 @@ There are some cases, when `bool()` function can return us `False` value:
 All other combinations/values return `True` value.
 
 ---
-### How to compare values?
+## How to compare values?
 You can compare values using comparison operators. The result of a comparison is a boolean value (`True` or `False`).
 Here are the available comparison operators:
 - `==`: equal to

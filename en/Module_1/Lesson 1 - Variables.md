@@ -8,7 +8,7 @@
 
 ---
 
-### What are variables?
+## What are variables?
 
 When you run any program, it asks the computer to store some information in memory. However, if the program stores all
 necessary data in files, for example, it wastes a lot of time, and you might notice that your computer works slowly.
@@ -17,7 +17,7 @@ languages. But how do they work?
 
 ---
 
-### Basic usage of variables
+## Basic usage of variables
 
 To create a variable, we just have to type a name of the variable, then put an `=` sign and type what to store in this
 variable:
@@ -26,14 +26,14 @@ variable:
 variable = "Hello, I am a variable"
 ```
 ---
-### How not to name variables
+## How not to name variables
 Of course, there are some constraints in naming variables. You cannot name variable:
 1) If name is the same as a keyword in Python. For example, name `if` is not allowed.
 2) If name is the same as a built-in function. For example, name `print` is not allowed.
 3) If name starting with one of these letter: `@#$%&*+-/^|~?!._`.
 4) If name starts with a number. For example, name `9nine` is not allowed.
 ---
-### How to name variables better
+## How to name variables better
 I suggest you use descriptive and meaningful variable names that reflect their purpose.
 For example, if you want to store the largest value of FPS in a game, it's better to name this variable as `max_fps`.
 
@@ -41,7 +41,7 @@ Also, there are some cases where you can use variables in the program. If you ha
 for the whole execution of the program, you can note in the code that this value is constant by typing with capital
 letters. Remember the previous example with fps? So maybe it would be better to name this variable as `MAX_FPS`.
 ---
-### What can we store in a variable?
+## What can we store in a variable?
 The answer is so simple: you can store the variables whatever you want? But what exactly?
 For now, it's enough to remember basic types of Python, which you will meet in every code:
 1) `int` - type of values describing integer numbers.
