@@ -1,4 +1,4 @@
-## Variables
+# Variables
 
 - [What are variables?](#what-are-variables)
 - [Basic usage of variables](#basic-usage-of-variables)

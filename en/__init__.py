@@ -14,4 +14,4 @@ License:
     MIT
 """
 
-__all__ = ["Module 1"]
+__all__ = ["Module_1"]
