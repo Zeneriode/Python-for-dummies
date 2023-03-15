@@ -4,6 +4,7 @@
 - [How to work with logical values?](#how-to-work-with-logical-values)
 - [How are other types converted to bool type?](#how-are-other-types-converted-to-bool-type)
 - [How to compare values?](#how-to-compare-values)
+- [Operator `is`](#operator-is)
 ---
 ## What is boolean algebra? ##
 Computers can work only with ones and zeros. Thus, all information is stored as sequences of ones and zeros in some
@@ -70,3 +71,32 @@ print(x > y or x < z)    # True, because x is greater than y or less than z (or 
 ```
 Note that the order of operations matters when chaining comparison operators together.
 You can use parentheses to group operations together if needed.
+
+## Operator `is` ##
+There is also `is` operator in Python, which can compare values by reference.
+It means we can check if any 2 variables reference to the same object.
+There is example of `is` operator:
+```python
+a = 14.2
+b = a
+c = 14.2
+print(a is b)  # True
+print(a is c)  # False
+```
+This operator needs when we try to find the same object (see [Module 3](../Module_3)). 
+
+However, there are some notes in standard types. Here's an example:
+```python
+a = 10
+print(a is 10)  # True
+a = 300
+print(a is 300)  # False
+```
+This is because Python caches (pre-allocates) and reuses small integers in the range of `-5` to `256` for performance
+optimization reasons. This means that if you create an integer within this range, any other reference to that same
+value will point to the same object in memory.
+
+However, for values outside this range, a new object is created every time you create a new integer. So when you write
+`a = -6`, Python creates a new integer object for `-6`, and when you later check `a is -6`, it compares the memory
+address of the `a` variable with the memory address of a newly created `-6` integer object, and they are not the same,
+hence the result is `False`. So use `==` to compare numbers and strings.
