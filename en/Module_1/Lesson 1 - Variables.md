@@ -40,6 +40,7 @@ For example, if you want to store the largest value of FPS in a game, it's bette
 Also, there are some cases where you can use variables in the program. If you have some value, which must be the same
 for the whole execution of the program, you can note in the code that this value is constant by typing with capital
 letters. Remember the previous example with fps? So maybe it would be better to name this variable as `MAX_FPS`.
+
 ---
 ## What can we store in a variable? ##
 The answer is so simple: you can store the variables whatever you want? But what exactly?
