@@ -5,6 +5,7 @@
 - [How are other types converted to bool type?](#how-are-other-types-converted-to-bool-type)
 - [How to compare values?](#how-to-compare-values)
 - [Operator `is`](#operator-is)
+- [A trouble of floating numbers](#a-trouble-of-floating-numbers)
 ---
 ## What is boolean algebra? ##
 Computers can work only with ones and zeros. Thus, all information is stored as sequences of ones and zeros in some
@@ -100,3 +101,34 @@ However, for values outside this range, a new object is created every time you c
 `a = -6`, Python creates a new integer object for `-6`, and when you later check `a is -6`, it compares the memory
 address of the `a` variable with the memory address of a newly created `-6` integer object, and they are not the same,
 hence the result is `False`. So use `==` to compare numbers and strings.
+
+---
+## A trouble of floating numbers
+Sometimes you can meet some troubles in comparing floating numbers. For example, consider we have to compare to numbers:
+```python
+print(1.15 * 100 == 115)  # It would print `False`
+```
+So it happens because of the way that floating-point numbers are represented in computers.
+
+Floating-point numbers are represented using a finite number of bits, which means that not all real numbers can be
+represented exactly. This can lead to rounding errors when performing arithmetic operations on floating-point numbers.
+
+In the case of 1.15 * 100, the actual result is a number very close to 115, but not exactly 115. This is because 1.15
+cannot be represented exactly in binary (the base used by computers), and so some rounding occurs during the
+multiplication.
+To see the full version of the number `1.15`, you can use that:
+```python
+print("{:.55f}".format(1.15))
+# 1.1499999999999999111821580299874767661094665527343750000
+```
+As you can see, the result is very close to 115, but not exactly equal to it. This is why 1.15 * 100 == 115 evaluates
+to False in Python.
+
+To compare floating-point numbers, it's often better to check if they are "close enough" to each other, using a
+tolerance value. For example, you could check if the absolute difference between the two numbers is less than a small
+value, such as 0.0001:
+```python
+print(abs(1.15 * 100 - 115) < 0.0001)  # True
+```
+This expression evaluates to True, because the absolute difference between the result of the multiplication and 115 is
+less than 0.0001.
