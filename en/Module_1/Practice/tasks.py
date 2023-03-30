@@ -67,4 +67,27 @@ Task 10:
 Write a program that prompts the user to enter two numbers and an operation (such as +, -, *, or /), and then performs
 the specified operation on the two numbers and prints the result.
 2 numbers and operator must be entered each on its line
+
+Task 11:
+Write a program that takes two numbers as input from the user and prints the larger number.
+
+Task 12:
+Write a program that takes a string as input from the user and prints "Vowel" if the string contains a vowel, and "Consonant"
+otherwise.
+
+Task 13:
+Write a program that takes a year (single number) as input from the user and prints "Leap" if the year is leap, and "Not leap" otherwise.
+
+Task 14:
+Write a program that takes a number as input from the user and prints if the number is even or odd.
+
+Task 15:
+Write a program that takes an age as input from the user and prints "Ok" if the number is greater than 21, and "At least you can drive" if
+the number is between 18 and 21 and "Where's your mum?" otherwise.
+
+Task 16:
+Write a program that takes a number as input from the user and prints day of week this number describe. Consider Jan 1st is Monday.
+
+Task 17:
+Write a program that takes a three-digit number as input from the user and prints if all its digits are equal or not.
 """
