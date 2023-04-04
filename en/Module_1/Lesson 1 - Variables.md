@@ -68,3 +68,17 @@ try to remember simple cases only
     just_bool = True  # simple case
     num_to_bool = bool(10)  # True, explanation a bit later
     ```
+
+---
+## Walrus operator
+It's rare thing used when you want to initialize variable while you're using it in some cases.
+
+To understand this feature you only have to look at the example:
+```python
+# Example with no using walrus operator
+x = int(input())
+print(x + 10)
+
+# The same code, but with using the walrus operator
+print(x := int(input()) + 10)
+```
