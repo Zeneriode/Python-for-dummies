@@ -62,27 +62,35 @@ Task 8:
 Write a program that prompts the user to enter a number, and then prints whether the number is even or odd.
 
 Task 9:
-Write a program that prompts the user to enter a password, and then checks if the password meets certain criteria
-Criteria is the following: 1) at least one number, 2) at least one letter, 3) at least 8 symbols
-
-Task 10:
 Write a program that prompts the user to enter two numbers and an operation (such as +, -, *, or /), and then performs
 the specified operation on the two numbers and prints the result.
 2 numbers and operator must be entered each on its line
+
+Task 10:
+Write a Python program that takes a student's score as input and calculates their grade. The grading scale is as follows:
+A: 90 - 100
+B: 80 - 89
+C: 70 - 79
+D: 60 - 69
+F: below 60
+The program should print the student's grade based on their score.
 
 Task 11:
 Write a program that takes two numbers as input from the user and prints the larger number.
 
 Task 12:
-Write a program that takes a string as input from the user and prints "Vowel" if the string contains a vowel, and
-"Consonant" otherwise.
+Write a Python program that takes the radius of a circle as input from the user and computes its area. The formula for
+the area of a circle is: A = pi * r^2, where pi is a constant and r is the radius of the circle.
+Small tip: to use a pi constant try to import that: `from math import pi`
 
 Task 13:
 Write a program that takes a year (single number) as input from the user and prints "Leap" if the year is leap, and
 "Not leap" otherwise.
 
 Task 14:
-Write a program that takes a number as input from the user and prints if the number is even or odd.
+Write a Python program that takes the coefficients of a quadratic equation as input from the user and finds its roots.
+The program should print the roots rounded to two decimal places. The formula for the roots of a quadratic equation of
+the form ax^2 + bx + c = 0 is: x = (-b ± sqrt(b^2 - 4ac)) / 2a
 
 Task 15:
 Write a program that takes an age as input from the user and prints "Ok" if the number is greater than 21, and
