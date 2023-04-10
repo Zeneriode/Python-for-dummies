@@ -26,9 +26,7 @@ Question 5: What type of values `input` function returns?
 
 Question 6: What values Python caches and reuses before running a program?
 """
-a = 5
-if a := 5:
-    pass
+
 """
 Practice
 
