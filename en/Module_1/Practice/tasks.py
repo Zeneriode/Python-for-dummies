@@ -100,4 +100,11 @@ Consider Jan 1st is Monday. The number is integer and greater than 0 (up to infi
 
 Task 17:
 Write a program that takes a three-digit number as input from the user and prints if all its digits are equal or not.
+
+Task 18:
+Ask the user to enter a 3-digits number, and calculate the sum of its digits. Print the result.
+
+Task 19:
+Write a program that takes 4 numbers(x1, y1, x2, y2) as input from the user and calculates number of moves the chess
+queen must do for going from one cell (x1, y1) to another (x2, y2).
 """
