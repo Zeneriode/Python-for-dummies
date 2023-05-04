@@ -1,13 +1,13 @@
 # Conditional statements
 
-- [Basic definition](#basic-definition)
-- [Advanced: elif and else](#advanced-elif-and-else)
-- [How to check condition better](#how-to-check-condition-better)
-- [Match statement](#match-statement)
+- [Basic definition](#basic-definition-)
+- [Advanced: elif and else](#advanced-elif-and-else-)
+- [How to check condition better](#how-to-check-condition-better-)
+- [Match statement](#match-statement-)
 
 ---
 
-## Basic definition
+## Basic definition ##
 In Python, if is a conditional statement used to specify a block of code to be executed if a particular condition is true.
 
 The basic syntax of an if statement in Python is as follows:
@@ -21,7 +21,7 @@ will continue executing the next line of code after the `if` block.
 
 ---
 
-## Advanced: elif and else
+## Advanced: elif and else ##
 Optionally, you can also include `elif` and `else` clauses after the `if` statement to handle additional cases. Here's an example that
 demonstrates the use of `if`, `elif`, and `else` statements:
 ```python
@@ -41,7 +41,7 @@ Note that you cannot create `elif` or `else` statements with no `if` before them
 
 ---
 
-## How to check condition better
+## How to check condition better ##
 There are lots of cases when you have to initialize variable or print something using `if`. For that you might use conditional expression.
 
 In Python, a conditional expression, also known as a ternary operator, is a way to write a short and concise if statement in a single line
@@ -59,7 +59,7 @@ to use them judiciously and not to make your code too complex or difficult to un
 
 ---
 
-## Match statement
+## Match statement ##
 Also, Python contains `match` statement.
 `match` is a new pattern matching feature that was introduced in Python 3.10. It's a new way to write conditional statements that allows you
 to match patterns in data structures such as tuples, lists, and dictionaries.

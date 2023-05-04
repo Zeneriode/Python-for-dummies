@@ -1,10 +1,10 @@
 # Variables #
 
-- [What are variables?](#what-are-variables)
-- [Basic usage of variables](#basic-usage-of-variables)
-- [How not to name variables](#how-not-to-name-variables)
-- [How to name variables better](#how-to-name-variables-better)
-- [What can we store in a variable?](#what-can-we-store-in-a-variable)
+- [What are variables?](#what-are-variables-)
+- [Basic usage of variables](#basic-usage-of-variables-)
+- [How not to name variables](#how-not-to-name-variables-)
+- [How to name variables better](#how-to-name-variables-better-)
+- [What can we store in a variable?](#what-can-we-store-in-a-variable-)
 
 ---
 

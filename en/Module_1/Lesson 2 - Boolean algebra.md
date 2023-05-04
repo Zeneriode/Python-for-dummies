@@ -1,11 +1,11 @@
 # Boolean algebra and comparisons of values #
 
-- [What is boolean algebra?](#what-is-boolean-algebra)
-- [How to work with logical values?](#how-to-work-with-logical-values)
-- [How are other types converted to bool type?](#how-are-other-types-converted-to-bool-type)
-- [How to compare values?](#how-to-compare-values)
-- [Operator `is`](#operator-is)
-- [A trouble of floating numbers](#a-trouble-of-floating-numbers)
+- [What is boolean algebra?](#what-is-boolean-algebra-)
+- [How to work with logical values?](#how-to-work-with-logical-values-)
+- [How are other types converted to bool type?](#how-are-other-types-converted-to-bool-type-)
+- [How to compare values?](#how-to-compare-values-)
+- [Operator `is`](#operator-is-)
+- [A trouble of floating numbers](#a-trouble-of-floating-numbers-)
 ---
 ## What is boolean algebra? ##
 Computers can work only with ones and zeros. Thus, all information is stored as sequences of ones and zeros in some
@@ -105,7 +105,7 @@ address of the `a` variable with the memory address of a newly created `-6` inte
 hence the result is `False`. So use `==` to compare numbers and strings.
 
 ---
-## A trouble of floating numbers
+## A trouble of floating numbers ##
 Sometimes you can meet some troubles in comparing floating numbers. For example, consider we have to compare to numbers:
 ```python
 print(1.15 * 100 == 115)  # It would print `False`
