@@ -4,6 +4,7 @@
 - [While loops](#while-loops-)
 - [For loops](#for-loops-)
 - [Range](#range-)
+- [Continue and break](#continue-and-break-)
 
 ---
 
@@ -96,3 +97,67 @@ For example, `range(1, 6)` will return a sequence of integers from `1` to `5` (i
 
 In the context of a `for` loop, `range` is often used to iterate over a sequence of numbers.
 You may see the example above.
+
+---
+
+## `continue` and `break` ##
+In Python, the break and continue keywords are used to control the flow of execution within loops, such as for and
+while loops. They allow you to change the default behavior of the loop and provide more control over which iterations
+are executed.
+
+Here's how `break` works:
+- When the `break` keyword is encountered within a loop, the loop is immediately terminated, and the program execution 
+continues with the next statement after the loop.
+- This means that the remaining iterations of the loop are skipped, and 
+the control is transferred to the statement following the loop.
+- `break` is commonly used when you want to exit a loop 
+prematurely based on a certain condition or when you have found the desired result.
+
+Here's an example that demonstrates the usage of `break`:
+```python
+for number in range(1, 6):
+    if number == 3:
+        break  # Exit the loop if the number is 3
+    print(number)
+
+print("Loop finished")
+```
+The output would be:
+```
+1
+2
+Loop finished
+```
+In the example, the loop iterates over the numbers list. When the number 3 is encountered, the `break` statement is
+executed, and the loop is terminated. Therefore, only the numbers 1 and 2 are printed before the loop finishes.
+
+Now let's move on to `continue`:
+- When the `continue` keyword is encountered within a loop, the current iteration is immediately terminated, and the
+program execution jumps to the next iteration of the loop.
+- This means that the remaining statements within the loop body for the current iteration are skipped, and the control
+proceeds to the next iteration.
+- `continue` is typically used when you want to skip certain iterations based on a condition and continue with the next
+iteration.
+
+Here's an example that demonstrates the usage of `continue`:
+```python
+for number in range(1, 6):
+    if number % 2 == 0:
+        continue  # Skip even numbers
+    print(number)
+
+print("Loop finished")
+```
+The output would be:
+```
+1
+3
+5
+Loop finished
+```
+In the example, the loop iterates over the numbers from 1 to 5. When an even number is encountered, the `continue`
+statement is executed, and the current iteration is terminated. Therefore, only the odd numbers (1, 3, and 5) are
+printed, and the loop finishes after processing all the elements.
+
+Both `break` and `continue` provide ways to alter the default flow of loop execution in Python, allowing you to
+customize the behavior based on specific conditions or requirements.
