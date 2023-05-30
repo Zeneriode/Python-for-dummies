@@ -61,4 +61,16 @@ Write a program that uses a loop to print the sum of the first 10 terms of the s
 
 Task 13:
 Write a program that takes a word from user and then prints each letter of word in each line.
+
+Task 14:
+Write a program that takes a number G and then G numbers. Print back only even numbers in reverse way.
+
+Task 15:
+Write a program that takes a number G and then G words. Print back all words in alphabetical order.
+
+Task 16:
+Write a program that takes a number G and then G strings as input and prints strings that have a length greater than 5. 
+
+Task 17:
+Write a program that takes a string and prints it reversed.
 """
