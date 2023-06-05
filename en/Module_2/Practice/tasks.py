@@ -73,4 +73,19 @@ Write a program that takes a number G and then G strings as input and prints str
 
 Task 17:
 Write a program that takes a string and prints it reversed.
+
+Task 18:
+Write a program to count the number of vowels in a given sentence.
+
+Task 19:
+Write a program that checks if a given string is a palindrome.
+
+Task 20:
+Write a program that check if a given number is prime.
+
+Task 21:
+Write a program that calculates sum of digits of given number.
+
+Task 22:
+Write a program that takes a sequence of numbers and finds the mean, median and mode of these numbers.
 """
