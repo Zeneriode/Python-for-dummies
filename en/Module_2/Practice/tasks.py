@@ -88,4 +88,16 @@ Write a program that calculates sum of digits of given number.
 
 Task 22:
 Write a program that takes a sequence of numbers and finds the mean, median and mode of these numbers.
+
+Task 23:
+You have a list of names and their ages. Create a program that takes a name as input and returns the age of the person.
+
+Task 24:
+Create a program that takes 2 lines. The first line contains some names of people and the second contains some ids of
+them. Then the program has to take number G and then G lines. Each new line contain 2 numbers, the first number is the
+id of parent and the second is id of child. The program must print all parents and then their children
+(1 line = name of parent + name of his child)
+
+Task 25:
+You're given 2 lines of numbers. Print all numbers that exist in both lines.
 """
